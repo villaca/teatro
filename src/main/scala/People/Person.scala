@@ -1,3 +1,5 @@
+package People
+
 class Person{
 
     private var _name: String = ""

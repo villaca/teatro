@@ -1,3 +1,5 @@
+package People
+
 class Actor(person: Person) extends Person {
 
     name = person.name
