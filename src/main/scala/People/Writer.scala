@@ -7,6 +7,6 @@ class Writer(person: Person) extends Person {
     habEscrita = person.habEscrita
 
     def writeScript = {
-        println(s"${name} wonders: How will I thicken this plot?")
+        "The neverending misadventures of a coder daring go where no coder has gone before."
     }
 }

@@ -1,8 +1,9 @@
 import People._
+import People.backstage.{Musician, Staff}
+import Play.{Play, PlayCharacter, Story}
 
 object Main {
     def main(args: Array[String]): Unit = {
-        println("Hello, world!")
 
         val person = Person.spawn("fulano", 5, 7)
         val hamlet = new Actor(person)
@@ -18,8 +19,26 @@ object Main {
 
         println(spielberg)
         println(spielberg.activity)
-        spielberg.writeScript
         spielberg.exec
+
+        val person3 = Person.spawn("beltrano", 3, 3)
+        val kaufman = new Musician(person3)
+
+        println(kaufman)
+        println(kaufman.activity)
+        kaufman.exec
+
+        val script = spielberg.writeScript
+
+        var actorsGuild: List[Actor] = List(hamlet)
+        var jonOliva = new PlayCharacter(9, actorsGuild)
+        var cast: List[PlayCharacter] = List(jonOliva)
+
+        var story = new Story(script, "Shakespeare && Roddenberry", cast)
+
+        var slaves: List[Staff] = List(spielberg, kaufman)
+
+        var midfallNightCode = new Play(story, slaves)
 
     }
 }
